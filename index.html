@@ -3,60 +3,69 @@
 <style>
 :root{--bg:#f5f6f9;--surf:#fff;--ink:#191d24;--ink2:#5c6672;--ink3:#8b95a1;--line:#e5e9ef;--acc:#4a56b5;--fresh:#0e8a56;--fresh-bg:#e4f5ec;--hot:#b5683a;--mono:ui-monospace,SFMono-Regular,Menlo,monospace;--sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:14.5px;line-height:1.55}
-.wrap{max-width:900px;margin:0 auto;padding:26px 18px 90px}
-h1{font-size:23px;font-weight:800;letter-spacing:-.02em;margin:0 0 5px;text-wrap:balance}
-.sub{color:var(--ink2);font-size:13.5px;max-width:66ch;margin-bottom:20px}
-.stats{display:flex;gap:9px;flex-wrap:wrap;margin-bottom:22px}
-.stat{background:var(--surf);border:1px solid var(--line);border-radius:11px;padding:9px 13px}
-.stat b{display:block;font-size:19px;font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700}
-.stat span{color:var(--ink3);font-size:11px;text-transform:uppercase;letter-spacing:.05em}
-.tophead{font-size:12px;text-transform:uppercase;letter-spacing:.07em;color:var(--ink3);font-weight:700;margin:0 0 10px}
-.topthemes{display:grid;grid-template-columns:repeat(auto-fit,minmax(148px,1fr));gap:10px;margin-bottom:24px}
-.tt{background:var(--surf);border:1px solid var(--line);border-top:3px solid var(--tc);border-radius:11px;padding:12px 13px}
-.tte{font-size:19px}.ttn{font-weight:700;font-size:13px;margin:6px 0 3px;text-wrap:balance}.ttm{color:var(--ink2);font-size:12px}.ttm b{color:var(--tc);font-family:var(--mono)}
-.bar{display:flex;gap:7px;flex-wrap:wrap;align-items:center;position:sticky;top:0;background:var(--bg);padding:11px 0;margin-bottom:8px;z-index:6;border-bottom:1px solid var(--line)}
-.bar button{background:var(--surf);color:var(--ink2);border:1px solid var(--line);border-radius:20px;padding:6px 14px;font-size:12.5px;cursor:pointer;font-weight:600;font-family:inherit}
-.bar button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
-.bar .sep{width:1px;height:20px;background:var(--line);margin:0 3px}
-.bar button:focus-visible{outline:2px solid var(--acc);outline-offset:2px}
-.grp{margin-top:24px}
-.thead{display:flex;align-items:center;gap:9px;flex-wrap:wrap;margin-bottom:11px;padding-bottom:8px;border-bottom:2px solid var(--tc)}
-.temo{font-size:18px}.thead h2{font-size:16.5px;font-weight:800;margin:0;letter-spacing:-.01em}
-.tcount{color:var(--ink3);font-size:11.5px;font-family:var(--mono);margin-left:auto}
-.note{color:var(--hot);font-size:11px;font-style:italic}
-.cards{display:flex;flex-direction:column;gap:9px}
-.card{background:var(--surf);border:1px solid var(--line);border-left:3px solid var(--tc);border-radius:10px;padding:12px 14px}
+.wrap{max-width:900px;margin:0 auto;padding:22px 18px 90px}
+h1{font-size:22px;font-weight:800;letter-spacing:-.02em;margin:0 0 5px;text-wrap:balance}
+.sub{color:var(--ink2);font-size:13px;max-width:66ch;margin-bottom:16px}
+.stats{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:16px}
+.stat{background:var(--surf);border:1px solid var(--line);border-radius:10px;padding:8px 12px}
+.stat b{display:block;font-size:18px;font-family:var(--mono);font-variant-numeric:tabular-nums;font-weight:700}
+.stat span{color:var(--ink3);font-size:10.5px;text-transform:uppercase;letter-spacing:.05em}
+.chips{display:flex;gap:7px;flex-wrap:wrap;margin-bottom:16px}
+.chip{background:var(--surf);border:1px solid var(--line);border-left:3px solid var(--tc);border-radius:9px;padding:6px 11px;font-size:12.5px;cursor:pointer;font-family:inherit;color:var(--ink)}
+.chip b{color:var(--tc);font-family:var(--mono)}.chip:hover{background:#eef1f6}
+.bar{position:sticky;top:0;background:var(--bg);padding:10px 0;margin-bottom:6px;z-index:6;border-bottom:1px solid var(--line)}
+.search{width:100%;padding:9px 13px;border:1px solid var(--line);border-radius:10px;font-size:14px;font-family:inherit;background:var(--surf);color:var(--ink);margin-bottom:9px}
+.search:focus{outline:2px solid var(--acc);outline-offset:1px;border-color:var(--acc)}
+.row{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+.row button{background:var(--surf);color:var(--ink2);border:1px solid var(--line);border-radius:18px;padding:5px 12px;font-size:12px;cursor:pointer;font-weight:600;font-family:inherit}
+.row button.on{background:var(--acc);color:#fff;border-color:var(--acc)}
+.row .sep{width:1px;height:18px;background:var(--line);margin:0 2px}
+.row .lite{margin-left:auto;color:var(--ink3);background:none;border:none;font-weight:600;font-size:12px;cursor:pointer}
+.count{color:var(--ink3);font-size:12px;font-family:var(--mono);padding:6px 2px}
+.grp{margin-top:8px;border:1px solid var(--line);border-radius:11px;overflow:hidden;background:var(--surf)}
+.ghead{width:100%;display:flex;align-items:center;gap:9px;padding:12px 14px;background:none;border:none;border-left:3px solid var(--tc);cursor:pointer;font-family:inherit;text-align:left;font-size:15px}
+.ghead:hover{background:#f0f2f6}.ghead:focus-visible{outline:2px solid var(--acc);outline-offset:-2px}
+.chev{color:var(--ink3);font-size:11px;transition:transform .15s}
+.grp:not(.collapsed) .chev{transform:rotate(90deg)}
+.temo{font-size:17px}.gname{font-weight:800;letter-spacing:-.01em}
+.gcount{margin-left:auto;color:var(--ink3);font-family:var(--mono);font-variant-numeric:tabular-nums;font-size:13px;background:#eef1f6;border-radius:20px;padding:2px 10px}
+.grp.collapsed .cards{display:none}
+.cards{display:flex;flex-direction:column;gap:9px;padding:4px 12px 14px}
+.card{background:#fbfcfd;border:1px solid var(--line);border-left:3px solid var(--tc);border-radius:10px;padding:11px 13px}
 .top{display:flex;align-items:center;gap:8px;flex-wrap:wrap;margin-bottom:6px}
 .h{color:var(--ink);font-weight:700;text-decoration:none}.h:hover{color:var(--acc)}
 .tier{font-size:9.5px;font-weight:800;padding:2px 7px;border-radius:5px;text-transform:uppercase;letter-spacing:.04em}
 .tier.et{background:#fbf0d8;color:#9a7212}.tier.ma{background:#dfeafc;color:#2d5bb0}.tier.se{background:#eef1f5;color:#5c6672}.tier.b2{background:#f3e2fa;color:#8a3fb0}
 .fchip{font-size:9.5px;font-weight:800;color:var(--fresh);background:var(--fresh-bg);border-radius:5px;padding:2px 7px;text-transform:uppercase}
 .dt{color:var(--ink3);font-size:11px;margin-left:auto;font-family:var(--mono)}
-.hook{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.35}
+.hook{font-size:13.5px;font-weight:700;color:var(--ink);margin-bottom:5px;line-height:1.35}
 .script{font-size:12.5px;color:var(--ink2);background:#eef1f6;border-radius:8px;padding:7px 10px;margin-bottom:7px;line-height:1.45}
-.mic{opacity:.6}
-.cap{color:var(--ink3);font-size:11.5px;margin-bottom:8px}
+.mic{opacity:.6}.cap{color:var(--ink3);font-size:11.5px;margin-bottom:8px}
 .foot{display:flex;gap:13px;flex-wrap:wrap;align-items:center}
 .watch{color:var(--acc);text-decoration:none;font-weight:700;font-size:12.5px}.watch:hover{text-decoration:underline}
 .mv{font-family:var(--mono);color:var(--ink3);font-size:11.5px}.rat{font-family:var(--mono);color:var(--hot);font-weight:700;font-size:11.5px}
 .hide{display:none!important}
-footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
+footer{margin-top:34px;color:var(--ink3);font-size:12px;border-top:1px solid var(--line);padding-top:14px}
 </style></head><body><div class="wrap">
 <h1>🎯 Радар Кати — тренды психологии по её панели</h1>
-<div class="sub">Аутлаеры (ролик обошёл медиану своего аккаунта ≥3× при охвате ≥5 000) по персональной панели Екатерины Филипповой. Темы и форматы распознаны <b>по кадру-обложке</b> (Gemini vision) — хук читается с экрана. <b>Свежие ≤14д</b> = тренды сейчас. Обновлено 15.07.2026.</div>
+<div class="sub">Аутлаеры (ролик обошёл медиану своего аккаунта ≥3× при охвате ≥5 000). Темы и форматы — по обложке (vision) и речи (транскрипт). <b>Секции свёрнуты</b> — кликни тему, чтобы раскрыть, или ищи по тексту/речи. Обновлено 15.07.2026.</div>
 <div class="stats">
-<div class="stat"><b>298</b><span>аккаунтов</span></div><div class="stat"><b>14</b><span>эталонов</span></div>
-<div class="stat"><b>263</b><span>сенсоров</span></div><div class="stat"><b>891</b><span>аутлаеров</span></div>
-<div class="stat"><b>141</b><span>свежих ≤14д</span></div></div>
-<div class="tophead">Топ тем — по свежим залётам</div><div class="topthemes"><div class="tt" style="--tc:#4a56b5"><div class="tte">🫂</div><div class="ttn">Отношения · любовь · расставания</div><div class="ttm"><b>37</b> свежих · 235</div></div><div class="tt" style="--tc:#2f8f6b"><div class="tte">💔</div><div class="ttn">Травма · детство · родители</div><div class="ttm"><b>16</b> свежих · 79</div></div><div class="tt" style="--tc:#b5683a"><div class="tte">🪞</div><div class="ttn">Самооценка · уверенность · стыд</div><div class="ttm"><b>11</b> свежих · 67</div></div><div class="tt" style="--tc:#8a4fa8"><div class="tte">🚧</div><div class="ttn">Границы · абьюз · нарциссизм</div><div class="ttm"><b>10</b> свежих · 64</div></div><div class="tt" style="--tc:#3a7ab5"><div class="tte">😰</div><div class="ttn">Тревога · паника · сон</div><div class="ttm"><b>9</b> свежих · 56</div></div></div>
+<div class="stat"><b>298</b><span>аккаунтов</span></div><div class="stat"><b>891</b><span>аутлаеров</span></div>
+<div class="stat"><b>141</b><span>свежих ≤14д</span></div><div class="stat"><b>14</b><span>эталонов</span></div></div>
+<div class="chips"><button class="chip" style="--tc:#4a56b5" onclick="jump('Отношения · любовь · расставания')">🫂 Отношения <b>37</b></button><button class="chip" style="--tc:#2f8f6b" onclick="jump('Травма · детство · родители')">💔 Травма <b>16</b></button><button class="chip" style="--tc:#b5683a" onclick="jump('Самооценка · уверенность · стыд')">🪞 Самооценка <b>11</b></button><button class="chip" style="--tc:#8a4fa8" onclick="jump('Границы · абьюз · нарциссизм')">🚧 Границы <b>10</b></button><button class="chip" style="--tc:#3a7ab5" onclick="jump('Тревога · паника · сон')">😰 Тревога <b>9</b></button><button class="chip" style="--tc:#a83a5c" onclick="jump('Эмоции · депрессия · пустота')">😌 Эмоции <b>8</b></button></div>
 <div class="bar">
-<button id="v-themes" class="on" onclick="setV('themes',this)">По темам</button><button id="v-formats" onclick="setV('formats',this)">По форматам</button>
+<input id="q" class="search" type="search" placeholder="🔎 поиск по аккаунту, крючку, речи…" oninput="setQ(this.value)">
+<div class="row">
+<button id="v-themes" class="on" onclick="setV('themes',this)">Темы</button><button id="v-formats" onclick="setV('formats',this)">Форматы</button>
 <span class="sep"></span>
-<button id="f-all" class="on" onclick="setF('all')">Все</button><button id="f-fresh" onclick="setF('fresh')">Свежие ≤14д</button>
+<button id="f-all" class="on" onclick="setF('all')">Все</button><button id="f-fresh" onclick="setF('fresh')">Свежие</button>
 <span class="sep"></span>
 <button class="on tf" data-t="all" onclick="setT('all',this)">Все тиры</button><button class="tf" data-t="эталон" onclick="setT('эталон',this)">Эталоны</button><button class="tf" data-t="сенсор" onclick="setT('сенсор',this)">Сенсоры</button><button class="tf" data-t="B2B" onclick="setT('B2B',this)">B2B</button>
+<button class="lite" onclick="allSec(true)">развернуть всё</button><button class="lite" onclick="allSec(false)">свернуть всё</button>
 </div>
-<div id="view-themes"><section class="grp" style="--tc:#4a56b5"><div class="thead"><span class="temo">🫂</span><h2>Отношения · любовь · расставания</h2><span class="tcount">37 свежих · 235 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<div class="count"><span id="cnt">891</span> роликов показано</div>
+</div>
+<div id="view-themes"><section class="grp collapsed" data-name="Отношения · любовь · расставания" style="--tc:#4a56b5"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🫂</span><span class="gname">Отношения · любовь · расставания</span><span class="gcount">235</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/ilona_migurina" target="_blank" rel="noopener">@ilona_migurina</a><span class="tier se">сенсор</span><span class="dt">104 дн</span></div>
 <div class="script"><span class="mic">🎙</span> Самцу ошейниковой игуаны показали самку. И обратите внимание на то, как поменялось его поведение, что вообще с ним происходит. Просто парень в истерике. В то время, когда самочка абсолютно адекватно себя ведет и всем своим видом показывает,…</div><div class="cap">В природе самец «завоевывает» самку, т.е. проходит отбор  В жизни же нарушен баланс ролей, но зато есть много ограничивающих внушений для же</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DWreytgCKFE" target="_blank" rel="noopener">смотреть →</a><span class="mv">6 393 585 просмотров</span><span class="rat">×6584.5 медианы</span></div>
@@ -997,7 +1006,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«человек с ПРЛ одновременно боится узнавать о прошлом партнера»</div><div class="script"><span class="mic">🎙</span> Человек справился одновременно боится узнавать о прошлом партнера и навязчиво стремится к этому. Он задает такие вопросы, которые точно причинят ему боль. И это не мазохизм, как может показаться, а попытка контролировать страх через знание.…</div><div class="cap">@emixyxy клинический психолог, схема-терапевт из Питера  в блоге о психологии, расстройствах личности и о том, что не принято обсуждать</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DZcGB8zqp99" target="_blank" rel="noopener">смотреть →</a><span class="mv">21 335 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#2f8f6b"><div class="thead"><span class="temo">💔</span><h2>Травма · детство · родители</h2><span class="tcount">16 свежих · 79 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Травма · детство · родители" style="--tc:#2f8f6b"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">💔</span><span class="gname">Травма · детство · родители</span><span class="gcount">79</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/dana_baigaliyeva" target="_blank" rel="noopener">@dana_baigaliyeva</a><span class="tier se">сенсор</span><span class="dt">53 дн</span></div>
 <div class="hook">«Про бунт против матери»</div><div class="script"><span class="mic">🎙</span> Замечательно выглядишь. Неужели? Да, я должен чаще тебе об этом говорить. Что случилось? Прости. Я не знал, что она тоже здесь будет. Если я обернусь, она увидит. Не надоело тебе, Клей? Ага. Обсудим это слияние позже. Это унизительно. Как м…</div><div class="cap">Этот фильм про человека, который всю жизнь жил между любовью и контролем.  Главный герой бунтует против матери не потому, что не любит её. А</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DYtJgdTqLZ1" target="_blank" rel="noopener">смотреть →</a><span class="mv">2 912 114 просмотров</span><span class="rat">×386.8 медианы</span></div>
@@ -1314,7 +1323,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Посетил кладбище отца, не смог сдержать слезу»</div><div class="script"><span class="mic">🎙</span> Приехал к себе в родное село, где я родился. В прошлом году здесь похоронил своего отца. Сейчас пришел к нему в могилу, где он похоронен. Попросил Всевышнего, чтобы он облегчил его положение. Просил его грехи. Ушел он вместе с Рамадан еще и…</div><div class="cap">Я стоял у могилы отца, обращался ко Всевышнему и просил Его, чтобы Он облегчил ему могильные муки, чтобы Он по Своей величайшей милости вел </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaTR01coxSr" target="_blank" rel="noopener">смотреть →</a><span class="mv">38 431 просмотров</span><span class="rat">×3.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#b5683a"><div class="thead"><span class="temo">🪞</span><h2>Самооценка · уверенность · стыд</h2><span class="tcount">11 свежих · 67 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Самооценка · уверенность · стыд" style="--tc:#b5683a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🪞</span><span class="gname">Самооценка · уверенность · стыд</span><span class="gcount">67</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/ilona_migurina" target="_blank" rel="noopener">@ilona_migurina</a><span class="tier se">сенсор</span><span class="dt">101 дн</span></div>
 <div class="hook">«БЛИН,»</div><div class="script"><span class="mic">🎙</span> Блин, ребята, я взрослая женщина, у меня двое детей, я в шоке от этого видео. Чтобы умножить 2 на 3, нужно просто сложить три двойки. Гораздо труднее 2 умножить на 9, слишком долго складывать. Поэтому в школе таблицу умножения просто учат н…</div><div class="cap">Здесь про самооценку, здоровье, отношения в паре, детско-родительские отношения и не только. Подписывайтесь @ilona_migurina</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DWy1xJiiD5S" target="_blank" rel="noopener">смотреть →</a><span class="mv">7 103 002 просмотров</span><span class="rat">×7315.1 медианы</span></div>
@@ -1583,7 +1592,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«СИЛЬНЫЕ ЛЮДИ ТОЖЕ УСТАЮТ»</div><div class="script"><span class="mic">🎙</span> Этот город выглядит как место, которое невозможно разрушить. А потом понимаешь, насколько оно хрупкое. Издалека крепость, башни, стены, город на холме. Кажется, стоит здесь им вечность. И будет стоять еще столько же. Подходишь ближе и видиш…</div><div class="cap">Кажется, что сила это отсутствие трещин и изъянов.  Но вот бетон разлетается на куски от одного сильного удара, а глина трескается постоянно</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaLNLhaIsty" target="_blank" rel="noopener">смотреть →</a><span class="mv">11 154 просмотров</span><span class="rat">×3.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#8a4fa8"><div class="thead"><span class="temo">🚧</span><h2>Границы · абьюз · нарциссизм</h2><span class="tcount">10 свежих · 64 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Границы · абьюз · нарциссизм" style="--tc:#8a4fa8"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🚧</span><span class="gname">Границы · абьюз · нарциссизм</span><span class="gcount">64</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/zera.ibragimova__" target="_blank" rel="noopener">@zera.ibragimova__</a><span class="tier se">сенсор</span><span class="dt">747 дн</span></div>
 <div class="hook">«ТАК ВЫГЛЯДИТ ЗАВИСИМОСТЬ. ЛЮБАЯ»</div><div class="cap">Алкогольная, интернет,пищевая, любовная. Какая угодно. Но мы поговорим о любовной. В которой  чаще всего пребывают именно женщины. Когда зав</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C8z60C8g6aO" target="_blank" rel="noopener">смотреть →</a><span class="mv">4 736 375 просмотров</span><span class="rat">×1237.0 медианы</span></div>
@@ -1840,7 +1849,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«ПРЛ, боль родная, раствориться в его проблемах»</div><div class="script"><span class="mic">🎙</span> А может я с тобой останусь? Останусь пеплом на губах Останусь пламенем глазок В твоих руках дыханием ветра…</div><div class="cap">Чужая боль при ПРЛ работает как моментальный клей для хрупкой, размытой идентичности ПРЛ-ка.   Когда собственное «Я» кажется пустым, спасени</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaD3AXAu7DC" target="_blank" rel="noopener">смотреть →</a><span class="mv">23 851 просмотров</span><span class="rat">×3.3 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#3a7ab5"><div class="thead"><span class="temo">😰</span><h2>Тревога · паника · сон</h2><span class="tcount">9 свежих · 56 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="эталон">
+<section class="grp collapsed" data-name="Тревога · паника · сон" style="--tc:#3a7ab5"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">😰</span><span class="gname">Тревога · паника · сон</span><span class="gcount">56</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="эталон">
 <div class="top"><a class="h" href="https://instagram.com/nasti.pyatkina" target="_blank" rel="noopener">@nasti.pyatkina</a><span class="tier et">эталон</span><span class="dt">173 дн</span></div>
 <div class="hook">«а точно ли я его сейчас люблю?»</div><div class="script"><span class="mic">🎙</span> Так, точно ли я его сейчас люблю? Нужно проверить себя, чувствую ли я рядом тепло. А вдруг он вообще не тот человек и я его просто обманываю? Я такая ужасная девушка. Я не должна об этом думать. Если я об этом думаю, значит я точно его не л…</div><div class="cap">ТРЕВОГА ЗАБИРАЕТ МОМЕНТЫ! моменты, которые нам стыдно себе позволить, пока эти мысли есть.  У меня есть 10 базовых лекций с работой окр в </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DT5e1v0jF8m" target="_blank" rel="noopener">смотреть →</a><span class="mv">2 223 872 просмотров</span><span class="rat">×275.8 медианы</span></div>
@@ -2065,7 +2074,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Как это выглядит со стороны?»</div><div class="cap">Как это выглядит со стороны?  Например, в том же ресторане: чрезмерная тревожность, гиперконтроль (относительно обстоятельств или того, как </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DDCZLBIt5dR" target="_blank" rel="noopener">смотреть →</a><span class="mv">9 215 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#a83a5c"><div class="thead"><span class="temo">😌</span><h2>Эмоции · депрессия · пустота</h2><span class="tcount">8 свежих · 102 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Эмоции · депрессия · пустота" style="--tc:#a83a5c"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">😌</span><span class="gname">Эмоции · депрессия · пустота</span><span class="gcount">102</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/raikhan.psychology_" target="_blank" rel="noopener">@raikhan.psychology_</a><span class="tier se">сенсор</span><span class="dt">748 дн</span></div>
 <div class="hook">«Депрессия»</div><div class="script"><span class="mic">🎙</span> Редактор субтитров Е.Жукова Корректор А.Егорова…</div><div class="cap">Что вызывает депрессию? Многие думают, что нужно искать причину своей депрессии в родительском воспитании. В этой связи можно заметить, что </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C8wsgzZIM9k" target="_blank" rel="noopener">смотреть →</a><span class="mv">756 945 просмотров</span><span class="rat">×624.0 медианы</span></div>
@@ -2474,7 +2483,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Обзор препарата Эсциталопрам»</div><div class="script"><span class="mic">🎙</span> Эстетолопрам или более известен под торговыми названиями ципролекс, элицея, селектра. Это самый чистый серотониновый антидепрессант из всех существующих. Он достаточно привлекателен при спектре тревожных расстройств, реже при легких депресс…</div><div class="cap">Эсцитолопрам обзор  На какую психофармакологию хотите еще точечный разбор ?   @dr.yusupovtim онлайн консультация врача психиатра/психотерапе</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DXo9oWFiObv" target="_blank" rel="noopener">смотреть →</a><span class="mv">96 657 просмотров</span><span class="rat">×3.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#7a8a2f"><div class="thead"><span class="temo">🍽</span><h2>Тело · еда · психосоматика</h2><span class="tcount">8 свежих · 50 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Тело · еда · психосоматика" style="--tc:#7a8a2f"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🍽</span><span class="gname">Тело · еда · психосоматика</span><span class="gcount">50</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/anastasia_miroshnik_" target="_blank" rel="noopener">@anastasia_miroshnik_</a><span class="tier se">сенсор</span><span class="dt">1418 дн</span></div>
 <div class="hook">«Как не отекать в самолёте»</div><div class="script"><span class="mic">🎙</span> Взлет разрешен.…</div><div class="cap">Дорогие, как не отёкать в самолёте, поблагодарите лайком и сохраняйте ❤️‍🔥 ⠀ Очень важно научиться во время перелёта оставаться в своём теле</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/ChylQmUIyqh" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 538 376 просмотров</span><span class="rat">×1433.7 медианы</span></div>
@@ -2675,7 +2684,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="script"><span class="mic">🎙</span> Ты холодна, когда сердце не твое…</div><div class="cap">Быть роскошной женщиной легко, главное знать места, где твою красоту могут подчеркнуть и усилить @kami.lab.irk я с вами ❤️</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DacjqETOs4v" target="_blank" rel="noopener">смотреть →</a><span class="mv">23 575 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#b58a2f"><div class="thead"><span class="temo">💰</span><h2>Деньги · работа · выгорание</h2><span class="tcount">8 свежих · 27 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Деньги · работа · выгорание" style="--tc:#b58a2f"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">💰</span><span class="gname">Деньги · работа · выгорание</span><span class="gcount">27</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/selfevolution_school" target="_blank" rel="noopener">@selfevolution_school</a><span class="tier se">сенсор</span><span class="dt">806 дн</span></div>
 <div class="hook">«Как восстановить баланс между жизнью и работой?»</div><div class="cap">Как восстановить баланс между жизнью и работой? Как вернуть себе радость жизни? Как научиться выбирать СЕБЯ?  Присоединяйтесь к обучению на </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C6beQ1jMQWE" target="_blank" rel="noopener">смотреть →</a><span class="mv">4 269 026 просмотров</span><span class="rat">×819.1 медианы</span></div>
@@ -2784,7 +2793,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="script"><span class="mic">🎙</span> Я хочу измениться по-гламорески, по-гламорески. Кампанийные свидетели, кавиарные питья, вы не заслуживаете ничего, кроме всего хорошего. Теперь весь мир не знает, что делать с нами. У меня достаточно денег в банке для нас двоих. Я должен де…</div><div class="cap">Бывает, мир, в который мы так боялись войти, становится нашим домом  «Дьявол носит Prada 2» — больше, чем история о модном журнале и конкуре</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaqJ3wysXfD" target="_blank" rel="noopener">смотреть →</a><span class="mv">16 569 просмотров</span><span class="rat">×3.2 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#5a6b8a"><div class="thead"><span class="temo">❤️</span><h2>Секс · либидо · близость</h2><span class="tcount">6 свежих · 31 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Секс · либидо · близость" style="--tc:#5a6b8a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">❤️</span><span class="gname">Секс · либидо · близость</span><span class="gcount">31</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/kristinagolubka.psy" target="_blank" rel="noopener">@kristinagolubka.psy</a><span class="tier se">сенсор</span><span class="dt">21 дн</span></div>
 <div class="hook">«если у тебя давно нет сексуальной»</div><div class="script"><span class="mic">🎙</span> Если у тебя давно нет сексуальной жизни, я предлагаю использовать это упражнение для того, чтобы перевести твою энергию в проекты и в деньги. Садись таз на пятки. Руки складывай в такую мудру. Вытягивай руки вверх. На ссот. Подтягивай мышцы…</div><div class="cap">Если у тебя давно нет сексуальной жизни , а твое тело и энергия просит это - сделай это упражнение всего 3 минуты и направь свою энергию на </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaArsqutTEA" target="_blank" rel="noopener">смотреть →</a><span class="mv">122 393 просмотров</span><span class="rat">×110.5 медианы</span></div>
@@ -2909,7 +2918,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Женщина с подавленной сексуальностью»</div><div class="script"><span class="mic">🎙</span> Субтитры делал DimaTorzok…</div><div class="cap">разверни 👇🏼  1. Замалчивание. Женщина, с подавленной с*ксуальностью зачастую сдерживает и подавляет свои чувства, оставляет конфликты неразр</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DJMKL5QNTPA" target="_blank" rel="noopener">смотреть →</a><span class="mv">218 374 просмотров</span><span class="rat">×3.2 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#3aa0a0"><div class="thead"><span class="temo">🧠</span><h2>Про терапию и профессию</h2><span class="tcount">5 свежих · 61 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Про терапию и профессию" style="--tc:#3aa0a0"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🧠</span><span class="gname">Про терапию и профессию</span><span class="gcount">61</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/larisakostyleva_psy" target="_blank" rel="noopener">@larisakostyleva_psy</a><span class="tier se">сенсор</span><span class="dt">89 дн</span></div>
 <div class="hook">«КАК ВЫГЛЯДИТ НЕГАТИВНЫЙ ОТЗЫВ ПСИХОЛОГУ»</div><div class="script"><span class="mic">🎙</span> Ха-ха-ха-ха! Ха-ха-ха-ха-ха!…</div><div class="cap">Какой из отзывов вы бы одобрили? #отзывы #отзывыклиентов #клиническийпсихолог #супервизор #кпттерапевт</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DXR0NDkjT7h" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 175 338 просмотров</span><span class="rat">×5789.8 медианы</span></div>
@@ -3154,7 +3163,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«РИСУЕТ ТАБЛИЦЫ И ПОКАЗЫВАЕТ ВСЕ СХЕМАТИЧНО»</div><div class="cap">А еще по желанию клиента домашняя работа 🤌🏻  Для записи на терапию — перейти по ссылке в шапке профиля   🎁 8 практик на тему любви к себе у </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DGLSlSzsiQO" target="_blank" rel="noopener">смотреть →</a><span class="mv">17 332 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#9a9a9a"><div class="thead"><span class="temo">🎭</span><h2>Личное · лайфстайл · разное</h2><span class="tcount">23 свежих · 119 аутлаеров</span> <span class="note">тонкие подписи — точность ниже</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Личное · лайфстайл · разное" style="--tc:#9a9a9a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎭</span><span class="gname">Личное · лайфстайл · разное</span><span class="gcount">119</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/margo__psiholog" target="_blank" rel="noopener">@margo__psiholog</a><span class="tier se">сенсор</span><span class="dt">291 дн</span></div>
 <div class="hook">«ЧП на концерте певца НЮ. Реакция певца поразила»</div><div class="script"><span class="mic">🎙</span> Слишком поздно вошло, слишком круто вошло.…</div><div class="cap">На концерте певца Юрия Николаенко одна из зрителей начала неадекватно себя вести, расталкивать людей вокруг и зрители не выдержали... Начала</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DPJYhXUiAWU" target="_blank" rel="noopener">смотреть →</a><span class="mv">4 605 100 просмотров</span><span class="rat">×4377.5 медианы</span></div>
@@ -3631,7 +3640,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="cap">актуалочка 💅</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaSdgiZtOA-" target="_blank" rel="noopener">смотреть →</a><span class="mv">11 054 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section></div>
-<div id="view-formats" class="hide"><section class="grp" style="--tc:#4a56b5"><div class="thead"><span class="temo">🎬</span><h2>Текст на экране</h2><span class="tcount">62 свежих · 358 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<div id="view-formats" class="hide"><section class="grp collapsed" data-name="Текст на экране" style="--tc:#4a56b5"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Текст на экране</span><span class="gcount">358</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/ilona_migurina" target="_blank" rel="noopener">@ilona_migurina</a><span class="tier se">сенсор</span><span class="dt">101 дн</span></div>
 <div class="hook">«БЛИН,»</div><div class="script"><span class="mic">🎙</span> Блин, ребята, я взрослая женщина, у меня двое детей, я в шоке от этого видео. Чтобы умножить 2 на 3, нужно просто сложить три двойки. Гораздо труднее 2 умножить на 9, слишком долго складывать. Поэтому в школе таблицу умножения просто учат н…</div><div class="cap">Здесь про самооценку, здоровье, отношения в паре, детско-родительские отношения и не только. Подписывайтесь @ilona_migurina</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DWy1xJiiD5S" target="_blank" rel="noopener">смотреть →</a><span class="mv">7 103 002 просмотров</span><span class="rat">×7315.1 медианы</span></div>
@@ -5064,7 +5073,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Его слова и обещания:»</div><div class="cap">Психолог, сексолог, схема-терапевт @gofman 🧠</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C8wNirQtYBX" target="_blank" rel="noopener">смотреть →</a><span class="mv">9 394 просмотров</span><span class="rat">×3.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#2f8f6b"><div class="thead"><span class="temo">🎬</span><h2>Говорящая голова</h2><span class="tcount">41 свежих · 309 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Говорящая голова" style="--tc:#2f8f6b"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Говорящая голова</span><span class="gcount">309</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/bukhanovskaia_" target="_blank" rel="noopener">@bukhanovskaia_</a><span class="tier se">сенсор</span><span class="dt">486 дн</span></div>
 <div class="hook">«ЛЕЖИТ У НАС ПАЦИЕНТ»</div><div class="script"><span class="mic">🎙</span> Еще мне психиатр открыл очень страшную тайну. Вот молодежь, слушайте. Оказывается, то, что принято считать самым легким и природным веществом, да, травка, оказывается, она сводит людей с ума. Она раскручивает шизоидные гены, так называемые.…</div><div class="cap">Ссылка на онлайн-запись на психотерапию и консультации в шапке профиля   Кругляшки записываю в свой телеграм-канал, ссылку найдете в актуаль</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DHTXqYsNFU6" target="_blank" rel="noopener">смотреть →</a><span class="mv">9 879 992 просмотров</span><span class="rat">×3110.8 медианы</span></div>
@@ -6301,7 +6310,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«человек с ПРЛ одновременно боится узнавать о прошлом партнера»</div><div class="script"><span class="mic">🎙</span> Человек справился одновременно боится узнавать о прошлом партнера и навязчиво стремится к этому. Он задает такие вопросы, которые точно причинят ему боль. И это не мазохизм, как может показаться, а попытка контролировать страх через знание.…</div><div class="cap">@emixyxy клинический психолог, схема-терапевт из Питера  в блоге о психологии, расстройствах личности и о том, что не принято обсуждать</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DZcGB8zqp99" target="_blank" rel="noopener">смотреть →</a><span class="mv">21 335 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#b5683a"><div class="thead"><span class="temo">🎬</span><h2>POV-сценка</h2><span class="tcount">13 свежих · 75 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="POV-сценка" style="--tc:#b5683a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">POV-сценка</span><span class="gcount">75</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/alexandra.solonaya_psy" target="_blank" rel="noopener">@alexandra.solonaya_psy</a><span class="tier se">сенсор</span><span class="dt">699 дн</span></div>
 <div class="hook">«Забыла о себе, перестали ценить»</div><div class="script"><span class="mic">🎙</span> Вот этот вот. Подожди, подожди. Вот этот. Вот так же. Вот с мамой. Не-не-не. А вот этот в очках черных. Сейчас. Вроде симпатичный. Какой-то мрачный тип, что ли. Дальше. Подожди. У Вилличка фотография. Анкета. Одиночка. Прям как тот кит. Жен…</div><div class="cap">Она любила мужа и семью, но про себя забыла и все перестали ее ценить. Героиня сняла розовые очки, когда увидела мужа на сайте знакомств. Ст</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C-uf5Vwtvmu" target="_blank" rel="noopener">смотреть →</a><span class="mv">2 061 105 просмотров</span><span class="rat">×3256.1 медианы</span></div>
@@ -6602,7 +6611,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Как это выглядит со стороны?»</div><div class="cap">Как это выглядит со стороны?  Например, в том же ресторане: чрезмерная тревожность, гиперконтроль (относительно обстоятельств или того, как </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DDCZLBIt5dR" target="_blank" rel="noopener">смотреть →</a><span class="mv">9 215 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#8a4fa8"><div class="thead"><span class="temo">🎬</span><h2>Листикл (нумерованный)</h2><span class="tcount">2 свежих · 15 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Листикл (нумерованный)" style="--tc:#8a4fa8"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Листикл (нумерованный)</span><span class="gcount">15</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/davydovakristi" target="_blank" rel="noopener">@davydovakristi</a><span class="tier se">сенсор</span><span class="dt">533 дн</span></div>
 <div class="hook">«позволяет»</div><div class="script"><span class="mic">🎙</span> Мужчина, который позволяет себе унизить и оскорбить свою женщину, это нездоровый мужчина. В прошлом это маленький травмированный мальчик, который был также унижен своей мамой. Внутри него сидит очень много злости и агрессии. И так как он не…</div><div class="cap"></div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DFaskd4KVtI" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 123 974 просмотров</span><span class="rat">×914.5 медианы</span></div>
@@ -6663,7 +6672,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«72 ФЗ»</div><div class="script"><span class="mic">🎙</span> Выжимаем последнюю. Что там в 72-м ФЗ? Это для привлечения внимания незаинтересованных. С первого сентября размещать рекламу нельзя. Вот, например, это напиток InBubble. Сказать, что это вкусный, освежающий напиток без сахара, я больше не с…</div><div class="cap">Терпение лопнуло как джусбол и мы раскрываем правду о 72-ФЗ. Я сегодня в роли юриста. Оцените от 1 до 10 качество вещания о нововведениях.  </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DNYbqYIsDWz" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 152 547 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#3a7ab5"><div class="thead"><span class="temo">🎬</span><h2>Дилемма X/Y</h2><span class="tcount">1 свежих · 13 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Дилемма X/Y" style="--tc:#3a7ab5"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Дилемма X/Y</span><span class="gcount">13</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/devushka_v_krossovkah" target="_blank" rel="noopener">@devushka_v_krossovkah</a><span class="tier se">сенсор</span><span class="dt">1352 дн</span></div>
 <div class="hook">«УЗНАЙ ЗА 3 СЕКУНДЫ какой ты человек?»</div><div class="cap">Результаты теста⤵️ ⠀ Кулак № 1 – «Пример для подражания». Ты бесспорный фаворит для многих. Люди готовы идти за тобой, следовать твоей филос</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/CkdjM9Yr8zr" target="_blank" rel="noopener">смотреть →</a><span class="mv">5 448 126 просмотров</span><span class="rat">×375.8 медианы</span></div>
@@ -6716,7 +6725,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«САМОЕ НЕОБЫЧНОЕ ПРЕДЛОЖЕНИЕ РУКИ И СЕРДЦА?!»</div><div class="script"><span class="mic">🎙</span> They can smell the legacy, uh-huh. I'm standing in supremacy. Got bitches tryna come for me. All around me now, I'm just gonna make them proud. M&M's in my clothes tight, so I don't wanna cry. So just dance on me, right, right, right. Got g…</div><div class="cap">САМОЕ НЕОБЫЧНОЕ ПРЕДЛОЖЕНИЕ РУКИ И СЕРДЦА?!  Треш или красавчики? 😱  Российские руферы Иван и Ангелина вновь удивили сеть.  На вершине знам</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaSBmMHtouM" target="_blank" rel="noopener">смотреть →</a><span class="mv">23 016 просмотров</span><span class="rat">×3.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#a83a5c"><div class="thead"><span class="temo">🎬</span><h2>Сплит-реакция</h2><span class="tcount">0 свежих · 7 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Сплит-реакция" style="--tc:#a83a5c"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Сплит-реакция</span><span class="gcount">7</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/trevoga.ru" target="_blank" rel="noopener">@trevoga.ru</a><span class="tier se">сенсор</span><span class="dt">42 дн</span></div>
 <div class="hook">«ВОТ ТАК ВЫГЛЯДИТ ПАНИЧЕСКАЯ АТАКА»</div><div class="script"><span class="mic">🎙</span> Вот так выглядит паническая атака. Смотрим. Почему мне так плохо? Я не знаю, подождите, почему мне так плохо? Стало плохо. Может, я перенервничал? Может, я сильно перенервничал? Что происходит? Не понимает, что с ним, и неверно интерпретиру…</div><div class="cap">Помните свою первую ПА?</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DZKkC6Mtg4k" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 182 192 просмотров</span><span class="rat">×152.2 медианы</span></div>
@@ -6745,7 +6754,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«ОЖИДАНИЕ: ПОСЛЕ 30 БУДУ ЖИТЬ АКТИВНОЙ ЖИЗНЬЮ»</div><div class="script"><span class="mic">🎙</span> Здравствуйте подписчики. Сижу отдыхаю. Сижу отдыхаю. Сижу отдыхаю. Сижу отдыхаю. Сижу отдыхаю. Сижу отдыхаю. Сижу отдыхаю.…</div><div class="cap"></div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/C8QEs1iiIK8" target="_blank" rel="noopener">смотреть →</a><span class="mv">1 374 722 просмотров</span><span class="rat">×3.4 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#7a8a2f"><div class="thead"><span class="temo">🎬</span><h2>До · после</h2><span class="tcount">0 свежих · 6 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="До · после" style="--tc:#7a8a2f"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">До · после</span><span class="gcount">6</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/larisakostyleva_psy" target="_blank" rel="noopener">@larisakostyleva_psy</a><span class="tier se">сенсор</span><span class="dt">118 дн</span></div>
 <div class="hook">«Что будет, если переборщить»</div><div class="script"><span class="mic">🎙</span> Вот что бывает, если переборщить с успокоительными и снотворными. Как звуки? Анастасия. Анастасия. Сколько лет тебе? Двадцать шесть. Двадцать шесть лет. Ты что употребляла? Снотворные. И вчера этот... Анастасия. Ау? Анастасия. Я на самолете…</div><div class="cap">#клиническийпсихолог #супервизор #рехаб</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DWG8rqyDPPU" target="_blank" rel="noopener">смотреть →</a><span class="mv">8 847 просмотров</span><span class="rat">×43.6 медианы</span></div>
@@ -6770,7 +6779,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«пограничница: я больше не буду делать себе больно»</div><div class="script"><span class="mic">🎙</span> Конкретного плана Б у меня нет, он нахуй и не нужен. План Б универсальный адреналин, пакуизм и оружие. Конкретного плана Б у меня нет, он нахуй и не нужен. План Б универсальный адрена...…</div><div class="cap">@emixyxy клинический психолог, схема-терапевт из Питера  в блоге о психологии, расстройствах личности и о том, что не принято обсуждать</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DXiyBX2iuhA" target="_blank" rel="noopener">смотреть →</a><span class="mv">28 643 просмотров</span><span class="rat">×4.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#b58a2f"><div class="thead"><span class="temo">🎬</span><h2>Гринскрин · реакция</h2><span class="tcount">0 свежих · 4 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Гринскрин · реакция" style="--tc:#b58a2f"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Гринскрин · реакция</span><span class="gcount">4</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/anara_akylbekovna_" target="_blank" rel="noopener">@anara_akylbekovna_</a><span class="tier se">сенсор</span><span class="dt">128 дн</span></div>
 <div class="hook">«Если много ешь — не наешься»</div><div class="script"><span class="mic">🎙</span> Губчисен тойбет дешит. Архтасан орк калдаму дешит. Джахши гинеп дюрсен ой секе дешит. Джунокой дюрсен джохчулухтун белгиси дешит. Тынч пулсон зерик трет дешит. Если ты смеешься и смеешься, ты смеешься. Если ты смеешься, ты смеешься. Если ты…</div><div class="cap">Описание: А что вы думаете об этом?</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DVtLN7riMGj" target="_blank" rel="noopener">смотреть →</a><span class="mv">552 362 просмотров</span><span class="rat">×63.8 медианы</span></div>
@@ -6787,7 +6796,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«РИСУЕТ ТАБЛИЦЫ И ПОКАЗЫВАЕТ ВСЕ СХЕМАТИЧНО»</div><div class="cap">А еще по желанию клиента домашняя работа 🤌🏻  Для записи на терапию — перейти по ссылке в шапке профиля   🎁 8 практик на тему любви к себе у </div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DGLSlSzsiQO" target="_blank" rel="noopener">смотреть →</a><span class="mv">17 332 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#5a6b8a"><div class="thead"><span class="temo">🎬</span><h2>Тренд · липсинк</h2><span class="tcount">0 свежих · 2 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Тренд · липсинк" style="--tc:#5a6b8a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Тренд · липсинк</span><span class="gcount">2</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/dobrovolskaya.y.d" target="_blank" rel="noopener">@dobrovolskaya.y.d</a><span class="tier se">сенсор</span><span class="dt">367 дн</span></div>
 <div class="script"><span class="mic">🎙</span> Bad boys, bad boys, what you gonna do? What you gonna do when they come for you? Bad boys, bad boys, what you gonna do? What you gonna do when they come for you? Bad boys, bad boys, what you gonna do? Никто мне не дает денег.…</div><div class="cap">Если тренды, то такие 🌊 Я решила видимо плыть в бок😂 P.S. у Ильи разряд по плаванию 😅</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DMF6Zzrt1I9" target="_blank" rel="noopener">смотреть →</a><span class="mv">6 164 896 просмотров</span><span class="rat">×269.9 медианы</span></div>
@@ -6796,7 +6805,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«тренд со стразами»</div><div class="cap">😍 я такое люблю 💅🏼  Жалко только, что так нельзя выступать 😁   Хоть а блоге побаловаться можно  #rhinestone #fencing #fencingposts #fencingi</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DZ5amkpJpzT" target="_blank" rel="noopener">смотреть →</a><span class="mv">58 916 просмотров</span><span class="rat">×9.1 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#3aa0a0"><div class="thead"><span class="temo">🎬</span><h2>Выбор карты</h2><span class="tcount">0 свежих · 2 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Выбор карты" style="--tc:#3aa0a0"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Выбор карты</span><span class="gcount">2</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/varda.ma" target="_blank" rel="noopener">@varda.ma</a><span class="tier se">сенсор</span><span class="dt">1176 дн</span></div>
 <div class="hook">«Новые мак карты Древо Рода»</div><div class="script"><span class="mic">🎙</span> Спиной к спине стоят мужчины твоего рода. Каждый мужчина здесь важен. Прадедушка дал жизнь твоему дедушке, а дедушка твоему отцу. А твой отец подарил жизнь тебе. И какие бы ни были отношения с твоим отцом, именно он когда-то стал первой час…</div><div class="cap">Текст для новых мак карт "Древо Рода". Приобрести метафорические карты "Послания Луны" с моими картинами и текстами можно на вайлдбериз, озо</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/CrjC4-Ox1Vt" target="_blank" rel="noopener">смотреть →</a><span class="mv">118 578 просмотров</span><span class="rat">×21.4 медианы</span></div>
@@ -6805,7 +6814,7 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="hook">«Послание для дочери»</div><div class="script"><span class="mic">🎙</span> Моя дорогая дочь, я буду для тебя первой частью этого мира и подарю тебе любовь. Любви будет не много и не мало, а столько, сколько дали когда-то мне. Река твоей жизни будет звонкой и текучей, но со временем ты заметишь в ней острые камни.…</div><div class="cap">Послание для дочери📝текст и картина для новых мак карт "Древо Рода". Приобрести метафорические карты "Послания Луны" с моими картинами и тек</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/Cs9KOWtANwS" target="_blank" rel="noopener">смотреть →</a><span class="mv">80 885 просмотров</span><span class="rat">×14.6 медианы</span></div>
 </div></div></section>
-<section class="grp" style="--tc:#9a9a9a"><div class="thead"><span class="temo">🎬</span><h2>Прочее</h2><span class="tcount">22 свежих · 100 аутлаеров</span></div><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
+<section class="grp collapsed" data-name="Прочее" style="--tc:#9a9a9a"><button class="ghead" onclick="toggle(this)" aria-expanded="false"><span class="chev">▸</span><span class="temo">🎬</span><span class="gname">Прочее</span><span class="gcount">100</span></button><div class="cards"><div class="card" data-fresh="0" data-tier="сенсор">
 <div class="top"><a class="h" href="https://instagram.com/zuevmotivator" target="_blank" rel="noopener">@zuevmotivator</a><span class="tier se">сенсор</span><span class="dt">293 дн</span></div>
 <div class="script"><span class="mic">🎙</span> Какая нежная любовь!…</div><div class="cap">Любовь — это почесать спинку, даже если устал. Котята знают это лучше нас: когда ты рядом и делаешь что-то простое, но важное для другого, —</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DPFMllWDWIX" target="_blank" rel="noopener">смотреть →</a><span class="mv">12 440 915 просмотров</span><span class="rat">×1657.9 медианы</span></div>
@@ -7206,18 +7215,35 @@ footer{margin-top:40px;color:var(--ink3);font-size:12px;border-top:1px solid var
 <div class="cap">актуалочка 💅</div>
 <div class="foot"><a class="watch" href="https://instagram.com/reel/DaSdgiZtOA-" target="_blank" rel="noopener">смотреть →</a><span class="mv">11 054 просмотров</span><span class="rat">×3.0 медианы</span></div>
 </div></div></section></div>
-<footer>Метод: аутлаер = композит охвата ≥5k и ≥3× медианы (§4.3). Темы/форматы — vision по обложке (Gemini 2.5 Flash). Панель дополняется.</footer>
+<footer>Метод: аутлаер = композит охвата ≥5k и ≥3× медианы (§4.3). Темы/форматы — vision по обложке + разбор речи. Панель дополняется.</footer>
 </div>
 <script>
-let V='themes',F='all',T='all';
+let V='themes',F='all',T='all',Q='';
+const vt=document.getElementById('view-themes'),vf=document.getElementById('view-formats'),cnt=document.getElementById('cnt');
+function toggle(btn){const s=btn.parentElement;s.classList.toggle('collapsed');btn.setAttribute('aria-expanded',!s.classList.contains('collapsed'));}
+function allSec(open){root().querySelectorAll('.grp').forEach(s=>{if(!s.classList.contains('hide'))s.classList.toggle('collapsed',!open);});}
+function root(){return V=='themes'?vt:vf;}
 function apply(){
- const root=V=='themes'?document.getElementById('view-themes'):document.getElementById('view-formats');
- document.getElementById('view-themes').classList.toggle('hide',V!='themes');
- document.getElementById('view-formats').classList.toggle('hide',V!='formats');
- root.querySelectorAll('.card').forEach(c=>{const okF=F=='all'||c.dataset.fresh=='1',okT=T=='all'||c.dataset.tier==T;c.classList.toggle('hide',!(okF&&okT));});
- root.querySelectorAll('.grp').forEach(s=>{const vis=[...s.querySelectorAll('.card')].some(c=>!c.classList.contains('hide'));s.classList.toggle('hide',!vis);});
+ const q=Q.trim().toLowerCase();
+ vt.classList.toggle('hide',V!='themes');vf.classList.toggle('hide',V!='formats');
+ let shown=0;
+ root().querySelectorAll('.grp').forEach(s=>{
+  let vis=0;
+  s.querySelectorAll('.card').forEach(c=>{
+   const ok=(F=='all'||c.dataset.fresh=='1')&&(T=='all'||c.dataset.tier==T)&&(!q||c.textContent.toLowerCase().includes(q));
+   c.classList.toggle('hide',!ok); if(ok)vis++;
+  });
+  s.classList.toggle('hide',vis==0);
+  s.querySelector('.gcount').textContent=vis;
+  if(q&&vis>0) s.classList.remove('collapsed');
+  shown+=vis;
+ });
+ cnt.textContent=shown;
 }
 function setV(v,el){V=v;document.getElementById('v-themes').classList.toggle('on',v=='themes');document.getElementById('v-formats').classList.toggle('on',v=='formats');apply();}
 function setF(v){F=v;document.getElementById('f-all').classList.toggle('on',v=='all');document.getElementById('f-fresh').classList.toggle('on',v=='fresh');apply();}
 function setT(v,el){T=v;document.querySelectorAll('.tf').forEach(b=>b.classList.remove('on'));el.classList.add('on');apply();}
+function setQ(v){Q=v;apply();}
+function jump(name){if(V!='themes')setV('themes',document.getElementById('v-themes'));const s=vt.querySelector('[data-name="'+name+'"]');if(s){s.classList.remove('collapsed');s.scrollIntoView({behavior:'smooth',block:'start'});}}
+apply();
 </script></body></html>
